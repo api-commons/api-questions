@@ -20,11 +20,9 @@ title: api-questions
            		$HowManyAPIs = 0;
            		$CountItem = data;
            		$.each($CountItem, function(countKey,countVal) {           			
-           			$QuestionLength = countVal['Swagger'].length;
-           			if($QuestionLength>0)
-			     	 	{
+           			console.log(countVal);
 			     	 	$HowManyAPIs++;	
-			     		}
+			     	
            			}); 
   				$HowManyAPIs = $HowManyAPIs -1;
      	 		$row = '<tr>';
