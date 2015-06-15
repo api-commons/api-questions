@@ -7,11 +7,29 @@ title: api-questions
 	
 	function AskQuestionOfAPIsJSON()
 		{
+		$apisjsonurl= document.getElementById("apisjsonurl").value;
+		$askURL = 'http://question.api.kinlane.com/questions/ask/organization/?apisjson_url=' + $apisjsonurl + '&questions=46,47,48,53,54,57,58,59,60,61,62,63,66,67,68,69,71,72,73';
 		$.ajax({
-		    url: 'http://question.api.kinlane.com/questions/ask/organization/?apisjson_url=http://theapistack.com/data/tigertext/apis.json&questions=46,47,48,53,54,57,58,59,60,61,62,63,66,67,68,69,71,72,73',
+		    url: $askURL,
 		    type: 'GET',
            success: function(data){        
-                console.log(data);
+                console.log(data);                
+			     $.each(data, function(apiKey, apiVal) { 
+			
+			     	 if(apiKey=='apisjson_url')
+			     	 	{
+			     	 		
+			     	 	}	
+			     	 else
+			     	 	{
+			     	 	$.each(apiVal['Swagger'], function(swaggerKey, swaggerVal) { 	
+			     	 		$question = swaggerVal['question'];
+			     	 		$answer = swaggerVal['answer'];
+			     	 		console.log($question + ': ' + $answer);
+			     	 		});	         
+			     	 	}								
+				});	                
+                
              }
 		});			
 		}
@@ -20,6 +38,6 @@ title: api-questions
 
 <form action="">
 	<labeL>APIs.json:</labeL>
-	<input type="text" name="apisjsonurl" value="">
+	<input type="text" id="apisjsonurl" name="apisjsonurl" value="">
 	<input type="button" name="askquestion" value="Ask" onclick="AskQuestionOfAPIsJSON();" />
 </form>
