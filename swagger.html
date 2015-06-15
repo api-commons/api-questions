@@ -9,6 +9,9 @@ title: api-questions
 		{
 		$apisjsonurl= document.getElementById("apisjsonurl").value;
 		$askURL = 'http://question.api.kinlane.com/questions/ask/organization/?apisjson_url=' + $apisjsonurl + '&questions=46,47,48,53,54,57,58,59,60,61,62,63,66,67,68,69,71,72,73';
+		
+		document.getElementById("questionlist").innerHTML = '';
+		
 		$.ajax({
 		    url: $askURL,
 		    type: 'GET',
