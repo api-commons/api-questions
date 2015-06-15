@@ -1,0 +1,25 @@
+---
+layout: page
+title: api-questions
+---
+
+<script type="text/javascript">
+	
+	function AskQuestionOfAPIsJSON()
+		{
+		$.ajax({
+		    url: 'http://question.api.kinlane.com/questions/ask/organization/?apisjson_url=http://theapistack.com/data/tigertext/apis.json&questions=46,47,48,53,54,57,58,59,60,61,62,63,66,67,68,69,71,72,73',
+		    type: 'GET',
+           success: function(data){        
+                console.log(data);
+             }
+		});			
+		}
+	
+</script>
+
+<form action="">
+	<labeL>APIs.json:</labeL>
+	<input type="text" name="apisjsonurl" value="">
+	<input type="button" name="askquestion" value="Ask" onclick="AskQuestionOfAPIsJSON();" />
+</form>
