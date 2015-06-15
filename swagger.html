@@ -25,14 +25,17 @@ title: api-questions
 			     	 	}	
 			     	 else
 			     	 	{
-			     	 		
+			     	 	$QuestionLength =  apiVal['Swagger'].length;
+			     	 	if($QuestionLength>0)
+			     	 		{
 			     	 		$row = '<tr>';
 			     	 		$row = $row + '<td colspan="2"';
 			     	 		$row = $row + '<span style="font-size: 22px; font-weight: bold;">' + apiKey + '</h1>';
 			     	 		$row = $row + '</td>';
 			     	 		$row = $row + '</tr>';
 			     	 		
-			     	 		 $('#questionlist').append($row);		
+			     	 		$('#questionlist').append($row);		
+			     	 		}
 			     	 		
 			     	 	$.each(apiVal['Swagger'], function(swaggerKey, swaggerVal) { 	
 			     	 		
