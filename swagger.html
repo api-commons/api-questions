@@ -15,9 +15,11 @@ title: api-questions
 		$.ajax({
 		    url: $askURL,
 		    type: 'GET',
-           success: function(data){        
-  
-  				$HowManyAPIs = data.length;
+           success: function(data){   
+           	
+           		$item = data;     
+  				console.log($item);
+  				$HowManyAPIs = $item.length;
   				console.log(data.length);
   				
      	 		$row = '<tr>';
