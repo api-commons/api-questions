@@ -25,7 +25,7 @@ title: api-questions
 			     	 		
 			     	 		$row = '<tr>';
 			     	 		$row = $row + '<td colspan="2"';
-			     	 		$row = $row + '<span><strong>' + apiKey + '</strong></span>';
+			     	 		$row = $row + '<h2>' + apiKey + '</h2>';
 			     	 		$row = $row + '</td>';
 			     	 		$row = $row + '</tr>';
 			     	 		
@@ -38,10 +38,10 @@ title: api-questions
 			     	 		//console.log($question + ': ' + $answer);
 			     	 		
 			     	 		$row = '<tr>';
-			     	 		$row = $row + '<td>';
+			     	 		$row = $row + '<td style="padding-left: 20px;">';
 			     	 		$row = $row + '<span><strong>' + $question + '</strong></span>';
 			     	 		$row = $row + '</td>';
-			     	 		$row = $row + '<td>';
+			     	 		$row = $row + '<tdstyle="padding-right: 20px;">';
 			     	 		$row = $row + '<span>' + $answer + '</span>';
 			     	 		$row = $row + '</td>';
 			     	 		$row = $row + '</tr>';
@@ -64,7 +64,7 @@ title: api-questions
 		<tr>
 			<td align="center">
 				<labeL>APIs.json:</labeL>
-				<input type="text" id="apisjsonurl" name="apisjsonurl" value="">
+				<input type="text" id="apisjsonurl" name="apisjsonurl" value="" size="35" />
 				<input type="button" name="askquestion" value="Ask" onclick="AskQuestionOfAPIsJSON();" />
 			</td>
 		</tr>	
