@@ -23,9 +23,22 @@ title: api-questions
 			     	 else
 			     	 	{
 			     	 	$.each(apiVal['Swagger'], function(swaggerKey, swaggerVal) { 	
+			     	 		
 			     	 		$question = swaggerVal['question'];
 			     	 		$answer = swaggerVal['answer'];
-			     	 		console.log($question + ': ' + $answer);
+			     	 		//console.log($question + ': ' + $answer);
+			     	 		
+			     	 		$row = '<tr>';
+			     	 		$row .= '<td>'
+			     	 		$row .= '<span><strong>' + $question + '</strong></span>';
+			     	 		$row .= '</td>'
+			     	 		$row .= '<td>'
+			     	 		$row .= '<span><strong>' + $answer + '</strong></span>';
+			     	 		$row .= '</td>'
+			     	 		$row .= '</tr>'
+			     	 		
+			     	 		 $('#questionlist').append($row);
+			     	 						     	 		
 			     	 		});	         
 			     	 	}								
 				});	                
@@ -37,7 +50,18 @@ title: api-questions
 </script>
 
 <form action="">
-	<labeL>APIs.json:</labeL>
-	<input type="text" id="apisjsonurl" name="apisjsonurl" value="">
-	<input type="button" name="askquestion" value="Ask" onclick="AskQuestionOfAPIsJSON();" />
+	<table cellpadding="5" cellspacing="5" width="100%">
+		<tr>
+			<td align="center">
+				<labeL>APIs.json:</labeL>
+				<input type="text" id="apisjsonurl" name="apisjsonurl" value="">
+				<input type="button" name="askquestion" value="Ask" onclick="AskQuestionOfAPIsJSON();" />
+			</td>
+		</tr>	
+		<tr>
+			<td align="center">
+				<table cellpadding="5" cellspacing="5" width="100%" id="questionlist"></table>
+			</td>
+		</tr>		
+	</table>
 </form>
