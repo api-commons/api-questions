@@ -16,6 +16,16 @@ title: api-questions
 		    url: $askURL,
 		    type: 'GET',
            success: function(data){        
+  
+  				$HowManyAPIs =  data.length;
+  				$HowManyAPIs = $HowManyAPIs - 1;
+     	 		$row = '<tr>';
+     	 		$row = $row + '<td colspan="2"';
+     	 		$row = $row + '<span style="font-size: 22px; font-weight: bold;">Questions Were Asked Of ' + $HowManyAPIs + ' APIs</span>';
+     	 		$row = $row + '</td>';
+     	 		$row = $row + '</tr>';
+     	 		
+     	 		$('#questionlist').append($row);              
               
 			     $.each(data, function(apiKey, apiVal) { 
 			
