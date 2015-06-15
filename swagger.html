@@ -17,14 +17,14 @@ title: api-questions
 		    type: 'GET',
            success: function(data){   
            	
-           		$item = data;     
-  				console.log($item);
-  				$HowManyAPIs = $item.length;
-  				console.log(data.length);
+           		$HowManyAPIs = 0;
+           		$.each(data, function(apiKey, apiVal) {
+           			$HowManyAPIs++;
+           			}); 
   				
      	 		$row = '<tr>';
      	 		$row = $row + '<td colspan="2"';
-     	 		$row = $row + '<span style="font-size: 22px; font-weight: bold;">Questions1 Were Asked Of ' + $HowManyAPIs + ' APIs</span>';
+     	 		$row = $row + '<span style="font-size: 22px; font-weight: bold;">Questions Were Asked Of ' + $HowManyAPIs + ' APIs</span>';
      	 		$row = $row + '</td>';
      	 		$row = $row + '</tr>';
      	 		
