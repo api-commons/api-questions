@@ -18,10 +18,14 @@ title: api-questions
            success: function(data){   
            	
            		$HowManyAPIs = 0;
-           		$.each(data, function(apiKey, apiVal) {
-           			$HowManyAPIs++;
+           		$.each(data, function(apiKey, apiVal) {           			
+           			$QuestionLength =  apiVal['Swagger'].length;
+           			if($QuestionLength>0)
+			     	 	{
+			     	 	$HowManyAPIs++;	
+			     		}
            			}); 
-  				
+  				$HowManyAPIs = $HowManyAPIs -1;
      	 		$row = '<tr>';
      	 		$row = $row + '<td colspan="2"';
      	 		$row = $row + '<span style="font-size: 22px; font-weight: bold;">Questions Were Asked Of ' + $HowManyAPIs + ' APIs</span>';
