@@ -18,8 +18,9 @@ title: api-questions
            success: function(data){   
            	
            		$HowManyAPIs = 0;
-           		$.each(data, function(apiKey, apiVal) {           			
-           			$QuestionLength = apiVal['Swagger'].length;
+           		$CountItem = data;
+           		$.each($CountItem, function(countKey,countVal) {           			
+           			$QuestionLength = countVal['Swagger'].length;
            			if($QuestionLength>0)
 			     	 	{
 			     	 	$HowManyAPIs++;	
