@@ -18,6 +18,8 @@ title: api-questions
            success: function(data){        
   
   				$HowManyAPIs =  data.length;
+  				console.log($HowManyAPIs);
+  				$HowManyAPIs = $HowManyAPIs - 0;
   				$HowManyAPIs = $HowManyAPIs - 1;
      	 		$row = '<tr>';
      	 		$row = $row + '<td colspan="2"';
