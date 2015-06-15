@@ -15,28 +15,7 @@ title: api-questions
 		$.ajax({
 		    url: $askURL,
 		    type: 'GET',
-           success: function(data){   
-           	
-           		$HowManyAPIs = 0;
-           		$CountItem = data;
-           		$.each($CountItem, function(countKey,countVal) {
-           			$any = 0;
-           			$.each(countVal['Swagger'], function(key, val) {
-           				$any++; 
-           				});
-       				if($any>0)
-       					{
-		     	 		$HowManyAPIs++;				     	
-		     	 		}
-           			}); 
-  				$HowManyAPIs = $HowManyAPIs -1;
-     	 		$row = '<tr>';
-     	 		$row = $row + '<td colspan="2" align="center">';
-     	 		$row = $row + '<span style="font-size: 18px;">Questions Were Asked Of ' + $HowManyAPIs + ' APIs</span>';
-     	 		$row = $row + '</td>';
-     	 		$row = $row + '</tr>';
-     	 		
-     	 		$('#questionlist').append($row);              
+           success: function(data){              
               
 			     $.each(data, function(apiKey, apiVal) { 
 			
